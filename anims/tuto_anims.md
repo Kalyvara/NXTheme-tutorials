@@ -267,7 +267,7 @@ This is how you should read this: at frame `0`, value is `1`, meaning that at th
 
 Now with all of these steps, we successfully made a scaling up animation when the game icon is **selected**. But what about when the icon is **being unselected**? Well, Switch's UI also offers us the possibility to tamper with that. If not done, the icon will actually keep its `1.4` factor **even after being unhovered**. So if we want to get things done properly, what follows is pretty much a mandatory thing to do. So, back to square one,
 
- 14. Go back to the little box that lists the `.szs` content and search for `RdtBtnIconGame_Inactive.bflan`. Open this file and repeat all the steps above starting from step 6. **At step 6.b., change the `[0]` value to `custom_G_Inactive`** (it doesn't actually matter but it's for convenience). For the animation, we will do things the other way around, so step 12 should look like this.
+ 14. Go back to the little box window that lists the `.szs` content and search for `RdtBtnIconGame_Inactive.bflan`. Open this file and repeat all the steps above starting from step 6. **At step 6.b., change the `[0]` value to `custom_G_Inactive`** (it doesn't actually matter but it's for convenience). For the animation, we will do things the other way around, so step 12 should look like this.
 
 ![KeyFrames (Inactive)](tuto8.jpg "KeyFrames (Inactive)")
 
@@ -285,7 +285,7 @@ Now, there is a last thing we must do before diffing, **adding groups**. More pr
 
 And with this, we are mostly done. Now is finally the time for diffing. **Make sure to save the edits in all the opened windows.**
 
-17. Go back to the szs box window, select `Tools` in the top menu, then the `This is the edited szs` option. You'll be prompted with a new window. Browse the unedited `ResidentMenu.szs` that we've been keeping in `Desktop/`, leave the checkbox as it is and click on `Generate diff`. 
+17. Go back to the `.szs` box window, select `Tools` in the top menu, then the `This is the edited szs` option. You'll be prompted with a new window. Browse the unedited `ResidentMenu.szs` that we've been keeping in `Desktop/`, leave the checkbox as it is and click on `Generate diff`. 
 
 ![Diffing](tuto11.jpg "Diffing")
 
@@ -321,8 +321,8 @@ While it's too convoluted to make changing colors animations (as I said in my in
 
 Let's say I want a blinking cursor for the navigation menu in the settings applet. This time, we'll load up `Set.szs` in Layout Editor. Here are the steps,
 
-1. Open `BtnNav_Root_Active.bflan`. **As always when creating custom animations,** do the proper modifications to the `Pat0` and `Pai0` sections. Create a **`FLVC` entry** (not `FLPA`!) and then another entry right under it. I chose to make my key frames as shown below. Notice that `AnimationTarget` value is `16` here.
-2. We'll also edit `BtnNav_Root_Inactive.bflan`, otherwise navigating the tabs will interrupt the cursor animation and lock it to a certain frame (same behavior as in our previous game icon animation).
+1. Open `BtnNav_Root_Active.bflan`. **As always when creating custom animations,** do the proper modifications to the `Pat0` and `Pai0` sections. Add the `N_BtnFocusKey` (cursor) pane to the list, create a **`FLVC` entry** (not `FLPA`!) right under it, and then another entry under `FLVC`. I chose to make my key frames as shown below. Notice that `AnimationTarget` value is `16` here.
+2. We'll also edit `BtnNav_Root_Inactive.bflan`, otherwise navigating the tabs will interrupt the cursor animation and lock it to a certain frame (same behavior as in our previous game icon animation). Considering that, we simply "reset" the `N_BtnFocusKey`'s state (after adding this pane to the list) by setting its alpha channel to `0` at frame `0`.
 3. Then again, for each `.bflan` file, create properly named groups in the `RootGroup` section of `BtnNav_Root.bflyt`. **Save all your edits.**
 4. Layout diff, compile and install, and there you go: now you have a blinking cursor.
 
