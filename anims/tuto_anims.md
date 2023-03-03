@@ -360,11 +360,11 @@ Key frames values range from 0 (invisible) to 255 (opaque).
 | --------------------------------- | ------- | --- |
 | `16`                             | alpha        | whole pane    |
 
-*NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple pattern: `0`, `1`, `2` = RGB for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = RGB for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
+*NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple and similar pattern: `0`, `1`, `2` = R, G, B for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = R, G, B for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
 
 ###### Known PaiTag entries
 
-| `PaiTag` | Used for...                |
+| `PaiTag` | Used for                |
 | -------- | --------------------- |
 | `FLPA`   | basic transformations |
 | `FLVC`     | vertex colors         |
