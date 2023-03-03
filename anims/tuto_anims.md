@@ -3,7 +3,7 @@
 
 *Written by [Capybara](https://themezer.net/creators/382997176307154945), March 2023*
 
-## Summary
+## Table of contents
 
 - [I. Introduction](#i-introduction)
 - [II. Requirements](#ii-requirements)
