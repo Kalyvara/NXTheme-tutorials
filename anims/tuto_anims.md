@@ -5,19 +5,19 @@
 
 ## Summary
 
-- [I. Introduction](#intro)
-- [II. Requirements](#req)
-- [III. Before actually starting](#before)
-	- [I.1. A few words on .szs files](#further1)
-	- [I.2. Layout Editor and diffing](#before2)
-	- [I.3. Summing up the process](#before3)
-- [IV. Tutorial](#tuto)
-- [V. Going further](#further)
-	- [V.1. Active and Inactive states](#further1)
-	- [V.2. Looping animations](#further2)
-	- [V.3. Fade in and fade out animations](#further3)
-	- [V.4. Useful tables](#further4)
-- [VI. Special thanks](#thanks)
+- [I. Introduction](#introduction)
+- [II. Requirements](#requirements)
+- [III. Before actually starting](#before-actually-starting)
+	- [I.1. A few words on .szs files](#a-few-words-on-szs-files)
+	- [I.2. Layout Editor and diffing](#layout-editor-and-diffing)
+	- [I.3. Summing up the process](#summing-up-the-process)
+- [IV. Tutorial](#tutorial)
+- [V. Going further](#going-further)
+	- [V.1. Active and Inactive states](#active-and-inactive-states)
+	- [V.2. Looping animations](#looping-animations)
+	- [V.3. Fade in and fade out animations](#fade-in-and-fade-out-animations)
+	- [V.4. Useful tables](#useful-table)
+- [VI. Special thanks](#special-thanks)
 
 ## Useful links
 
@@ -385,4 +385,4 @@ For the `FLVC PaiTag`, the key frames values range from 0 (invisible) to 255 (op
 ## <a href="#thanks"></a>VI. Special thanks
 
 - The whole Nintendo Switch modding and homebrew scenes
-- Big thanks to exelix and Migush for helping me improving my skills at theme modding
+- Big thanks to exelix and Migush for all the tips
