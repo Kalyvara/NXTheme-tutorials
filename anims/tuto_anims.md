@@ -1,5 +1,5 @@
 
-# Implement custom animations to NX themes
+# Implementing custom animations to NX themes
 
 *Written by [Capybara](https://themezer.net/creators/382997176307154945), March 2023*
 
