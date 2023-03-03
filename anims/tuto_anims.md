@@ -16,7 +16,7 @@
 	- [V.1. Active and Inactive states](#v1-active-and-inactive-states)
 	- [V.2. Looping animations](#v2-looping-animations)
 	- [V.3. Fade in and fade out animations](#v3-fade-in-and-fade-out-animations)
-	- [V.4. Useful tables](#v4-useful-table)
+	- [V.4. Useful tables](#v4-useful-tables)
 - [VI. Special thanks](#vi-special-thanks)
 
 ## Useful links
