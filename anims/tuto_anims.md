@@ -1,8 +1,11 @@
-
 # Creating custom animations for your NX themes
 
 *Written by [Capybara](https://themezer.net/creators/382997176307154945), March 2023*
 
+<div align="center">
+<img src="https://avatars.githubusercontent.com/u/65415089?s=200&v=4" />
+</div>
+	
 ## Table of contents
 
 - [I. Introduction](#i-introduction)
@@ -334,26 +337,39 @@ Let's say I want a blinking cursor for the navigation menu in the settings apple
 
 #### V.4.a. AnimationTarget
 
-Values expected for the key frames values are in `float` type.
-| `AnimationTarget` (`FLPA PaiTag`) | Transformation                     |
-| --------------- | ---------------------------------- |
-| `0`               | x-axis translation                 |
-| `1`               | y-axis translation                 |
-| `2`               |                                    |
-| `3`               |                                    |
-| `4`               | z-axis rotation (clockwise)        |
-| `5`               | z-axis rotation (counterclockwise) |
-| `6`               | x-axis scale (base ratio is `1`)                      |
-| `7`               | y-axis scale (base ratio is `1`)                      |
-| `8`               | pane size along x-axis             |
-| `9`               | pane size along y-axis                                   |
+##### FLPA PaiTag
 
-For the `FLVC PaiTag`, the key frames values range from 0 (invisible) to 255 (opaque).
+Expected value type for the key frames is `float`.
+| `AnimationTarget` (`FLPA PaiTag`) | Transformation                     | Unit    | 
+| --------------------------------- | ---------------------------------- | --- |
+| `0`                               | x-axis translation                 | px    |
+| `1`                               | y-axis translation                 | px    |
+| `2`                               |                                    |     |
+| `3`                               |                                    |     |
+| `4`                               | z-axis rotation (clockwise)        | degrees    |
+| `5`                               | z-axis rotation (counterclockwise) | degrees    |
+| `6`                               | x-axis scale (base ratio is `1`)   | none    |
+| `7`                               | y-axis scale (base ratio is `1`)   | none    |
+| `8`                               | pane size along x-axis             | px    |
+| `9`                               | pane size along y-axis             | px    |
+
+##### FLVC PaiTag
+
+Key frames values range from 0 (invisible) to 255 (opaque).
 | `AnimationTarget` (`FLVC PaiTag`) | Channel | Corner    | 
 | --------------------------------- | ------- | --- |
 | `16`                             | alpha        | whole pane    |
 
 *NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple pattern: `0`, `1`, `2` = RGB for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = RGB for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
+
+###### Known PaiTag entries
+
+| `PaiTag` | Used for...                |
+| -------- | --------------------- |
+| `FLPA`   | basic transformations |
+| `FLVC`     | vertex colors         |
+| `FLEU`     | USD patches           |
+| `FLMC`     | ?                      |
 
 #### V.4.b. Notable files
 
