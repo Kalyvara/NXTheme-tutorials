@@ -6,18 +6,18 @@
 ## Summary
 
 - [I. Introduction](#i-introduction)
-- [II. Requirements](#requirements)
-- [III. Before actually starting](#before-actually-starting)
-	- [III.1. A few words on .szs files](#iii-1-a-few-words-on-szs-files)
-	- [III.2. Layout Editor and diffing](#layout-editor-and-diffing)
-	- [III.3. Summing up the process](#summing-up-the-process)
-- [IV. Tutorial](#tutorial)
-- [V. Going further](#going-further)
-	- [V.1. Active and Inactive states](#active-and-inactive-states)
-	- [V.2. Looping animations](#looping-animations)
-	- [V.3. Fade in and fade out animations](#fade-in-and-fade-out-animations)
-	- [V.4. Useful tables](#useful-table)
-- [VI. Special thanks](#special-thanks)
+- [II. Requirements](#ii-requirements)
+- [III. Before actually starting](#iii-before-actually-starting)
+	- [III.1. A few words on .szs files](#iii1-a-few-words-on-szs-files)
+	- [III.2. Layout Editor and diffing](#iii2-layout-editor-and-diffing)
+	- [III.3. Summing up the process](#iii3-summing-up-the-process)
+- [IV. Tutorial](#iv-tutorial)
+- [V. Going further](#v-going-further)
+	- [V.1. Active and Inactive states](#v1-active-and-inactive-states)
+	- [V.2. Looping animations](#v2-looping-animations)
+	- [V.3. Fade in and fade out animations](#v3-fade-in-and-fade-out-animations)
+	- [V.4. Useful tables](#v4-useful-table)
+- [VI. Special thanks](#vi-special-thanks)
 
 ## Useful links
 
