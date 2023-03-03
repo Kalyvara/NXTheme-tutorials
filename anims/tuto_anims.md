@@ -5,12 +5,12 @@
 
 ## Summary
 
-- [I. Introduction](#introduction)
+- [I. Introduction](#i-introduction)
 - [II. Requirements](#requirements)
 - [III. Before actually starting](#before-actually-starting)
-	- [I.1. A few words on .szs files](#a-few-words-on-szs-files)
-	- [I.2. Layout Editor and diffing](#layout-editor-and-diffing)
-	- [I.3. Summing up the process](#summing-up-the-process)
+	- [III.1. A few words on .szs files](#iii-1-a-few-words-on-szs-files)
+	- [III.2. Layout Editor and diffing](#layout-editor-and-diffing)
+	- [III.3. Summing up the process](#summing-up-the-process)
 - [IV. Tutorial](#tutorial)
 - [V. Going further](#going-further)
 	- [V.1. Active and Inactive states](#active-and-inactive-states)
