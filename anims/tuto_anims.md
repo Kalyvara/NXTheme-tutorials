@@ -88,7 +88,7 @@ Making themes means altering `.szs` files. Those are archives that contain the U
 
   
 
-Pictures, icons, text, and pretty much all that's displayed on your console screen are *pane* objects that are contained in `.bflyt` files. These `.bflyt` files also contain information on panes' position/size/scale and their RGBA channels. In other words, those panes are what we will mess around with in this tutorial, **i.e. they are precisely the objects on which we will attach our animations.** So you might want to **check beforehand the**  `.bflyt`  **file that contains the pane you want to animate.**
+Pictures, icons, text, and pretty much everything displayed on your console screen are *pane* objects that are contained in `.bflyt` files. These `.bflyt` files also contain information on panes' position/size/scale and their RGBA channels. In other words, those panes are what we will mess around with in this tutorial, **i.e. they are precisely the objects on which we will attach our animations.** So you might want to **check beforehand the**  `.bflyt`  **file that contains the pane you want to animate.**
 
   
 
