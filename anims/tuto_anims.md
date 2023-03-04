@@ -372,7 +372,7 @@ To illustrate this, one notable case is the Redownload Software button at the bo
 | ------------------------------------------ | ------------------------------------------ |
 | Visible Redownload Software button               | Hidden Redownload Software button             |
 
-To give another example, a highlighted game in my Spotify Deck home menu has a gray rounded card around its icon. These are `P_BtnBase` panes found in `RdtBtnIconGame.bflyt`. They actually have some transparency by default, meaning that simply changing their colors won't render as intended. I made them full opaque by changing the `KeyFrames` value under the `P_BtnBase`'s `FLVC` entry to `255`.
+To give another example, a highlighted game in my Spotify Deck home menu has a gray rounded card around its icon. These are `P_BtnBase` panes found in `RdtBtnIconGame.bflyt`. They actually have some transparency by default, meaning that simply changing their colors in your `.json` won't render as intended. I made them full opaque by changing the `KeyFrames` value under the `P_BtnBase`'s `FLVC` entry to `255`.
 
 *NB: Notice that I never mentioned the `FLVI PaiTag` up to now. It's because I don't actually know what they stand for as their occurrences are rather rare, therefore had no opportunity to actually figure them out (apart from hiding the shop button in the full launcher).*
 
