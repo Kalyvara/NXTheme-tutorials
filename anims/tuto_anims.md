@@ -252,7 +252,7 @@ Now, the following steps will define the scaling up animation we want to achieve
 
 	 - `AnimationTarget` is the type of animation we choose to assign to our pane. This is basically here that we tell the pane to either scale up or down, translate along the x-axis or y-axis, or rotate around the z-axis clockwise/counterclockwise. Later on, this is where you might be interested in checking the tables to test the values associated to other types of animations.
 	 - `KeyFrames` is... self-explanatory, I guess. This allows us to break our animation down into properly defined key frames.
-	 - `DataType` refers to the type of our inputs in the KeyFrames field. **Just keep in mind that it should always be set as `2`** (meaning `float`). Although it's not really relevant here, you can follow [this link](https://layoutdocs.themezer.net/guide/layouts/usd-sections/) if you want to know a little more.
+	 - `DataType` refers to the type of our inputs in the KeyFrames field. **Just keep in mind that it should always be set to `2`** (meaning `float`). Although it's not really relevant here, you can follow [this link](https://layoutdocs.themezer.net/guide/layouts/usd-sections/) if you want to know a little more.
 
 11. We will define our values as,
 	11.a. `AnimationTarget` = `6`
@@ -266,7 +266,7 @@ Leave the rest unchanged. Value `6` for `AnimationTarget` means *"scale along th
 
 ![KeyFrames (Active)](tuto6.jpg "KeyFrames (Active)")
 
-This is how you should read this: at frame `0`, value is `1`, meaning that at the initial frame, the `N_Root` pane will keep its base ratio along **its horizontal axis**. Then, **up until frame `8`**, the pane will *progressively* scale up until reaching a `1.4` factor.
+This is how you should read this: at frame `0`, value is `1`, meaning that at the initial frame, the `N_Root` pane will keep its base ratio **along its horizontal axis**. Then, **up until frame `8`**, the pane will *progressively* scale up until reaching a `1.4` factor.
 
 *NB1: Note that we defined earlier the `FrameSize` to be `9999` in the `Pai1 section`. We're good as long as this value is superior to the `Keyframe` maximum value, which is `8` here.*
 
@@ -383,7 +383,7 @@ Expected value type for `KeyFrames` is `float`.
 - Translations are relative to the (x, y) coordinates defined in your `.json` layout, so a (0, 0) translation means that the pane keeps its base position
 - Scaling is also relative to what is defined in your `.json` layout. To keep your pane size at a 1:1 ratio, `KeyFrames` values should be set to `1`
 - Value `3` for `AnimationTarget` scales the pane down along the y-axis by a certain px amount (no cropping involved), **although** it needs further testing to be completely sure. It seems to work with absolute values within `KeyFrames`, meaning that negative values have the same effect as if they were positive
-- Value `2` for `AnimationTarget` also needs further testing. This time I couldn't figure out what it actually does. An obvious guess would be that it scales the pane down along the x-axis, but my trial and error sessions haven't given any luck
+- Value `2` for `AnimationTarget` also needs further testing. This time I couldn't figure out what it actually does. An obvious guess would be that it scales the pane down along the x-axis, but my trial and error sessions haven't given any luck towards that expected result
 
 ##### FLVC PaiTag
 
@@ -429,5 +429,5 @@ Related to vertex colors transformations listed below.
 
 - Big thanks to exelix and Migush for all the tips
 - Zhi for the animated background testing part
-- All the contributors to the Nintendo Switch homebrew & modding scenes
+- All the contributors from the Nintendo Switch homebrew & modding scenes
 
