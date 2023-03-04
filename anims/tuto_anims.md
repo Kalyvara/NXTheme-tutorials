@@ -5,6 +5,9 @@
 <div align="center">
 <img src="https://avatars.githubusercontent.com/u/65415089?s=200&v=4" />
 </div>
+
+<br />
+This tutorial virtually sums up everything I know about animations. However, some parts of this tutorial aren't as complete and rigorous as I'd have wanted them to be, so feel free to reach out to me if you know about additional resource that can be put into this document.
 	
 ## Table of contents
 
@@ -20,20 +23,24 @@
 	- [V.2. Looping animations](#v2-looping-animations)
 	- [V.3. Fade in and fade out animations](#v3-fade-in-and-fade-out-animations)
 	- [V.4. Animated backgrounds](#v4-animated-backgrounds)
-    - [V.5. Useful tables](#v5-useful-tables)
-	    - [V.5.a. PaiTag entries](#v5a-paitag-entries)
-         - [V.5.b. AnimationTarget](#v5b-animationtarget)
-         - [V.5.c. Notable files](#v5c-notable-files)
-- **[VI. Special thanks](#vi-special-thanks)**
+	- [V.5. Animations may overwrite things](#v5-animations-may-overwrite-things)
+    - [V.6. Useful tables](#v6-useful-tables)
+	    - [V.6.a. PaiTag entries](#v6a-paitag-entries)
+         - [V.6.b. AnimationTarget](#v6b-animationtarget)
+         - [V.6.c. Notable files](#v6c-notable-files)
+- **[VI. Additional notes and special thanks](#vi-additional-notes-and-special-thanks)**
 
 ## Useful links
 
+#### Documentation and download links
 - [LayoutDocs](https://layoutdocs.themezer.net/)
 - [exelix's github (Switch Theme Injector)](https://github.com/exelix11/SwitchThemeInjector)
 - [FuryBaguette's github (Switch Layout Editor)](https://github.com/FuryBaguette/SwitchLayoutEditor)
 - [Migush's github (ThemezerNX)](https://github.com/ThemezerNX/)
 - [Zhi's github (Patterns theme)](https://github.com/zzzribas/Patterns)
-- [Themezer Discord server](https://discord.com/invite/nnm8wyM)
+
+#### To ask for support
+- [ThemezerNX Discord server](https://discord.com/invite/nnm8wyM)
 - [exelix's Discord server](https://discord.gg/rqU5Tf8)
 - [NXTheme subreddit](https://www.reddit.com/r/NXThemes/)
 
@@ -118,7 +125,7 @@ Each file corresponds to a specific menu,
 | `ResidentMenu.szs` | Home screen      |
 | `Set.szs`          | Settings         |
 | `Psl.szs`          | Player selection |
-| `Flauncher.szs`    | All software     |
+| `Flauncher.szs`    | All software / full launcher    |
 | `Lock.szs`         | Lock screen      |
 | `MyPage.szs`       | User page        |
 
@@ -349,11 +356,29 @@ An alternative solution would be to animate the pane that contains your custom b
 - You're still stuck with a static background image since there is no support for animated images of any kind, nor for video files
 - `RdtBase_Enter.bflan` contains the home screen unlocking animation. Try to loop your animation using the `Flags` item and maybe you can guess what will happen (boot loop, UI and sound glitches). The only thing you can do to sort of emulate the loop is to duplicate your animation pattern all the way through an absurd amount of key frames. [Zhi](https://themezer.net/creators/239384767785730048) actually did this in his [Patterns theme](https://themezer.net/packs/Patterns.-58f) with a frame limit of 64000 (which makes it about 8 minutes). If you are interested in learning the whole process, you can read through [his own documentation there](https://github.com/zzzribas/Patterns/wiki). As a side note, you might want to stay tuned for Zhi's next releases because he comes up with quite some good ideas!
 
-For other applets (settings, user page, etc.), there is actually no known way at all to apply any kind of animation behavior to a custom background image.
+For other applets (e.g. settings, user page, etc.), there is actually no known way at all to apply any kind of animation behavior to a custom background image.
 
-### <a href="#further5"></a>V.5. Useful tables
+### <a href="#further6"></a>V.5. Animations *may* overwrite things</a>
 
-#### V.5.a. PaiTag entries
+If you've spent some time editing `.json` layouts, you may have encountered cases where, no matter what you do, the changes you make to a pane (e.g. colors, position, etc.), even while having the `C_W` and `C_B` patches enabled, lead to no result. **In such cases, chances are that an animation is overwriting your edits.**
+
+To illustrate this, one notable case is the Redownload Software button at the bottom of the full launcher applet's main page (`Flauncher.szs`). The panes corresponding to this button are `L_Shop` and `T_Empty`, and these won't hide by simply attaching the `Visible: false` property to them. This is due to the `FLVI` entries within `FlcCntMain_Type.bflan` that overwrite any attempt made in your `.json` code. To sort this out, the `KeyFrames` values under each `FLVI` entry must be set to `0` (`1` by default).
+
+| ![Shop (1)](tuto16.jpg "Shop (1)") | ![Full launcher (2)](tuto17.jpg "Shop (2)") |
+| ------------------------------------------ | ------------------------------------------ |
+| `L_Shop` > `FLVI` > `KeyFrames`               | `T_Empty` > `FLVI` > `KeyFrames`             |
+
+| ![Full launcher (1)](flaunch1.jpg "Full launcher (1)") | ![Full launcher (2)](flaunch2.jpg "Full launcher (2)") |
+| ------------------------------------------ | ------------------------------------------ |
+| Visible Redownload Software button               | Hidden Redownload Software button             |
+
+To give another example, a highlighted game in my Spotify Deck home menu has a gray rounded card around its icon. These are `P_BtnBase` panes found in `RdtBtnIconGame.bflyt`. They actually have some transparency by default, meaning that simply changing their colors won't render as intended. I made them full opaque by changing the `KeyFrames` value under the `P_BtnBase`'s `FLVC` entry to `255`.
+
+*NB: Notice that I never mentioned the `FLVI PaiTag` up to now. It's because I don't actually know what they stand for as their occurrences are rather rare, therefore had no opportunity to actually figure them out (apart from hiding the shop button in the full launcher).*
+
+### <a href="#further6"></a>V.6. Useful tables
+
+#### V.6.a. PaiTag entries
 
 `AnimationTarget` values and subsequent animation behavior change depending on the defined `PaiTag`.
 
@@ -362,9 +387,10 @@ For other applets (settings, user page, etc.), there is actually no known way at
 | `FLPA`   | basic transformations |
 | `FLVC`     | vertex colors         |
 | `FLEU`     | USD patches           |
+| `FLVI`     | *unknown*           |
 | `FLMC`     | *unknown*                      |
 
-#### V.5.b. AnimationTarget
+#### V.6.b. AnimationTarget
 
 ##### FLPA PaiTag
 
@@ -400,7 +426,7 @@ Related to vertex colors transformations listed below.
 
 *NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple and similar pattern: `0`, `1`, `2` = R, G, B for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = R, G, B for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
 
-#### V.5.c. Notable files
+#### V.6.c. Notable files
 
 ##### ResidentMenu.szs (home screen)
 
@@ -429,9 +455,10 @@ Related to vertex colors transformations listed below.
 | `FlcBtnIconGame`     | game icon in the main and group screens               | `FlcBtnIconGame_Active`, `FlcBtnIconGame_Inactive` |
 | `FlcBtnIconGameEdit` | game icon in the create group and add/remove software screens | `FlcBtnIconGameEdit_Active`, `FlcBtnIconGameEdit_Inactive`                                                   |
 
-## <a href="#thanks"></a>VI. Special thanks
+## <a href="#thanks"></a>VI. Additional notes and special thanks
 
-- Big thanks to exelix and Migush for all the tips
+At last, special (and big) thanks to:
+- exelix and Migush for all the tips
 - Zhi for the animated background testing part
-- All the contributors from the Nintendo Switch homebrew & modding scenes
+- All the contributors from the Nintendo Switch modding scene
 
