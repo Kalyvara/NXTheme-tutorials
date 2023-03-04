@@ -252,10 +252,12 @@ Now, the following steps will define the scaling up animation we want to achieve
 
 	 - `AnimationTarget` is the type of animation we choose to assign to our pane. This is basically here that we tell the pane to either scale up or down, translate along the x-axis or y-axis, or rotate around the z-axis clockwise/counterclockwise. Later on, this is where you might be interested in checking the tables to test the values associated to other types of animations.
 	 - `KeyFrames` is... self-explanatory, I guess. This allows us to break our animation down into properly defined key frames.
-	 - `DataType` refers to the type of our inputs in the KeyFrames field. **Just keep in mind that it should always be set to `2`** (meaning `float`). Although it's not really relevant here, you can follow [this link](https://layoutdocs.themezer.net/guide/layouts/usd-sections/) if you want to know a little more.
+	 - `DataType` refers to the type of our inputs in the `KeyFrames` field. **Just keep in mind that it should always be set to `2`** (meaning `float`). Although it's not really relevant here, you can follow [this link](https://layoutdocs.themezer.net/guide/layouts/usd-sections/) if you want to know a little more.
 
 11. We will define our values as,
+
 	11.a. `AnimationTarget` = `6`
+
 	11.b. `DataType` = `2`
 
 Leave the rest unchanged. Value `6` for `AnimationTarget` means *"scale along the x-axis"* (horizontally).
@@ -342,10 +344,12 @@ Let's say I want a blinking cursor for the navigation menu in the settings apple
 ### <a href="#further4"></a>V.4. Animated backgrounds
 
 There is no *proper* nor easy known way to make animated backgrounds. Switch Theme Injector only supports `.dds` and `.jpg` files.
-A solution would be to animate the pane that contains your custom background image. That *indeed* works, and there are a few themes that already have achieved this out there. To do so, you need to add `L_BgNml` to the pane list in `RdtBase_Enter.bflan` and make your edits to your convenience. However, this solution has its limitations:
+A solution would be to animate the pane that contains your custom background image. That *indeed* works, and there are a few themes that already have achieved this out there. To do so, working with `ResidentMenu.szs`, you need to add `L_BgNml` to the pane list in `RdtBase_Enter.bflan` and make your edits to your convenience. However, this solution has its limitations:
 
 - You're still stuck with a static background image since there is no support for animated images of any kind, nor for video files
 - `RdtBase_Enter.bflan` contains the home screen unlocking animation. Try to loop your animation using the `Flags` item and maybe you can guess what will happen (boot loop, UI and sound glitches). The only thing you can do to sort of emulate the loop is to duplicate your animation pattern all the way through an absurd amount of key frames. [Zhi](https://themezer.net/creators/239384767785730048) actually did this in his [Patterns theme](https://themezer.net/packs/Patterns.-58f) with a frame limit of 64000 (which makes it about 8 minutes). If you are interested in learning the whole process, you can read through [his own documentation there](https://github.com/zzzribas/Patterns/wiki). As a side note, you might want to stay tuned for Zhi's next releases because he comes up with quite some good ideas!
+
+For other applets (settings, user page, etc.), there is actually no known way at all to apply any kind of animation behavior to a custom background image.
 
 ### <a href="#further5"></a>V.5. Useful tables
 
