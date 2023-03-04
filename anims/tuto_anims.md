@@ -22,8 +22,8 @@
 	- [V.4. Animated backgrounds](#v4-animated-backgrounds)
     - [V.5. Useful tables](#v5-useful-tables)
 	    - [V.5.a. PaiTag entries](#v5a-paitag-entries)
-        - [V.5.b. AnimationTarget](#v5b-animationtarget)
-        - [V.5.c. Notable files](#v5c-notable-files)
+         - [V.5.b. AnimationTarget](#v5b-animationtarget)
+         - [V.5.c. Notable files](#v5c-notable-files)
 - **[VI. Special thanks](#vi-special-thanks)**
 
 ## Useful links
@@ -372,7 +372,7 @@ Expected value type for `KeyFrames` is `float`.
 | `0`                               | x-axis translation                 | px    |
 | `1`                               | y-axis translation                 | px    |
 | `2`                               | *unknown*                                   | /    |
-| `3`                               | scale **down**                                   | px    |
+| `3`                               | y-axis scale **down**                                   | px    |
 | `4`                               | z-axis rotation (clockwise)        | degrees    |
 | `5`                               | z-axis rotation (counterclockwise) | degrees    |
 | `6`                               | x-axis scale   | none    |
