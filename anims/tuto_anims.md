@@ -322,7 +322,7 @@ It's also worth noting that the edits made for Inactive states will actually ove
 
 ### <a href="#further2"></a>V.2. Looping animations
 
-It is possible to make a loop for an animation. Such a thing can be seen in [Migush](https://themezer.net/creators/123859829453357056)'s [JAG layout](https://themezer.net/layouts/homemenu/JAG-Layout-2) where selected game icons follow a scale up and down idle animation. All you have to do to make a looping animation is to set the `Flags` value to `1` (while `0` disables the loop) in the `Pai1 section` of a `.bflan` file. Unfortunately, **more complex animations that combine multiple transformations (among scaling, translating and rotating) can't be achieved properly** since the flag is applied to the whole `.bflan`. To be more explicit, a game icon wouldn't be able to move `10px` above AND THEN follow a looping scale up and down. In such a case, the linear displacement would also be looped.
+It is possible to make a loop for an animation. Such a thing can be seen in [Migush](https://themezer.net/creators/123859829453357056)'s [JAG layout](https://themezer.net/layouts/homemenu/JAG-Layout-2) where selected game icons follow a scale up and down idle animation. All you have to do to make a looping animation is to set the `Flags` value to `1` (while `0` disables the loop) in the `Pai1 section` of a `.bflan` file. Unfortunately, **more complex animations that combine multiple transformations can't be achieved properly** since the flag is applied to the whole `.bflan`. To be more explicit, a game icon wouldn't be able to move `10px` above AND THEN follow a looping scale up and down. In such a case, the linear displacement would also be looped.
 
 ### <a href="#further3"></a>V.3. Fade in and fade out animations
 
