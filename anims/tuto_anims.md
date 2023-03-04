@@ -8,19 +8,23 @@
 	
 ## Table of contents
 
-- [I. Introduction](#i-introduction)
-- [II. Requirements](#ii-requirements)
-- [III. Before actually starting](#iii-before-actually-starting)
+- **[I. Introduction](#i-introduction)**
+- **[II. Requirements](#ii-requirements)**
+- **[III. Before actually starting](#iii-before-actually-starting)**
 	- [III.1. A few words on .szs files](#iii1-a-few-words-on-szs-files)
 	- [III.2. Layout Editor and diffing](#iii2-layout-editor-and-diffing)
 	- [III.3. Summing up the process](#iii3-summing-up-the-process)
-- [IV. Tutorial](#iv-tutorial)
-- [V. Going further](#v-going-further)
+- **[IV. Tutorial](#iv-tutorial)**
+- **[V. Going further](#v-going-further)**
 	- [V.1. Active and Inactive states](#v1-active-and-inactive-states)
 	- [V.2. Looping animations](#v2-looping-animations)
 	- [V.3. Fade in and fade out animations](#v3-fade-in-and-fade-out-animations)
-	- [V.4. Useful tables](#v4-useful-tables)
-- [VI. Special thanks](#vi-special-thanks)
+	- [V.4. Animated backgrounds](#v4-animated-backgrounds)
+    - [V.5. Useful tables](#v5-useful-tables)
+	    - [V.5.a. PaiTag entries](#v5a-paitag-entries)
+        - [V.5.b. AnimationTarget](#v5b-animationtarget)
+        - [V.5.c. Notable files](#v5c-notable-files)
+- **[VI. Special thanks](#vi-special-thanks)**
 
 ## Useful links
 
@@ -28,7 +32,9 @@
 - [exelix's github (Switch Theme Injector)](https://github.com/exelix11/SwitchThemeInjector)
 - [FuryBaguette's github (Switch Layout Editor)](https://github.com/FuryBaguette/SwitchLayoutEditor)
 - [Migush's github (ThemezerNX)](https://github.com/ThemezerNX/)
+- [Zhi's github (Patterns theme)](https://github.com/zzzribas/Patterns)
 - [Themezer Discord server](https://discord.com/invite/nnm8wyM)
+- [exelix's Discord server](https://discord.gg/rqU5Tf8)
 - [NXTheme subreddit](https://www.reddit.com/r/NXThemes/)
 
 
@@ -324,66 +330,87 @@ While it's too convoluted to make changing colors animations (as I said in my in
 
 Let's say I want a blinking cursor for the navigation menu in the settings applet. This time, we'll load up `Set.szs` in Layout Editor. Here are the steps,
 
-1. Open `BtnNav_Root_Active.bflan`. **As always when creating custom animations,** do the proper modifications to the `Pat0` and `Pai0` sections. Add the `N_BtnFocusKey` (cursor) pane to the list, create a **`FLVC` entry** (not `FLPA`!) right under it, and then another entry under `FLVC`. I chose to make my key frames as shown below. Notice that `AnimationTarget` value is `16` here.
+1. Open `BtnNav_Root_Active.bflan`. **As always when creating custom animations,** do the proper modifications to the `Pat1` and `Pai1` sections. Add the `N_BtnFocusKey` entry (cursor pane) to the list, create a **`FLVC` entry** (not `FLPA`!) right under it, and then another entry under `FLVC`. I chose to make my key frames as shown below. Notice that the `AnimationTarget` value is `16` here.
 2. We'll also edit `BtnNav_Root_Inactive.bflan`, otherwise navigating the tabs will interrupt the cursor animation and lock it to a certain frame (same behavior as in our previous game icon animation). Considering that, we simply "reset" `N_BtnFocusKey`'s state (after adding this pane to the list) by setting its alpha channel to `0` at frame `0`.
-3. Then again, for each `.bflan` file, create properly named groups in the `RootGroup` section of `BtnNav_Root.bflyt`. **Save all your edits.**
+3. Then again, for each `.bflan` file, create properly named groups in the `RootGroup` section of `BtnNav_Root.bflyt`. **Don't forget to save all your edits.**
 4. Layout diff, compile and install, and there you go: now you have a blinking cursor.
 
 | ![Settings (1)](tuto14.jpg "Settings (1)") | ![Settings (2)](tuto15.jpg "Settings (2)") |
 | ------------------------------------------ | ------------------------------------------ |
 | Adding `FLVC` entry (Active)               | Adding `FLVC` entry (Inactive)             |
 
-### <a href="#further4"></a>V.4. Useful tables
+### <a href="#further4"></a>V.4. Animated backgrounds
 
-#### V.4.a. AnimationTarget
+There is no *proper* nor easy known way to make animated backgrounds. Switch Theme Injector only supports `.dds` and `.jpg` files.
+A solution would be to animate the pane that contains your custom background image. That *indeed* works, and there are a few themes that already have achieved this out there. To do so, you need to add `L_BgNml` to the pane list in `RdtBase_Enter.bflan` and make your edits to your convenience. However, this solution has its limitations:
 
-##### FLPA PaiTag
+- You're still stuck with a static background image since there is no support for animated images of any kind, nor for video files
+- `RdtBase_Enter.bflan` contains the home screen unlocking animation. Try to loop your animation using the `Flags` item and maybe you can guess what will happen (boot loop, UI and sound glitches). The only thing you can do to sort of emulate the loop is to duplicate your animation pattern all the way through an absurd amount of key frames. Zhi actually did this in his [Patterns theme](https://themezer.net/packs/Patterns.-58f) with a frame limit of around 8 minutes. If you are interested in learning the whole process, you can read through [his own documentation there](https://github.com/zzzribas/Patterns/wiki). As a side note, you might want to stay tuned for Zhi's next releases because he comes up with quite some good ideas!
 
-Expected value type for the key frames is `float`.
-| `AnimationTarget` (`FLPA PaiTag`) | Transformation                     | Unit    | 
-| --------------------------------- | ---------------------------------- | --- |
-| `0`                               | x-axis translation                 | px    |
-| `1`                               | y-axis translation                 | px    |
-| `2`                               |                                    |     |
-| `3`                               |                                    |     |
-| `4`                               | z-axis rotation (clockwise)        | degrees    |
-| `5`                               | z-axis rotation (counterclockwise) | degrees    |
-| `6`                               | x-axis scale (base ratio is `1`)   | none    |
-| `7`                               | y-axis scale (base ratio is `1`)   | none    |
-| `8`                               | pane size along x-axis             | px    |
-| `9`                               | pane size along y-axis             | px    |
+### <a href="#further5"></a>V.5. Useful tables
 
-##### FLVC PaiTag
+#### V.5.a. PaiTag entries
 
-Key frames values range from 0 (invisible) to 255 (opaque).
-| `AnimationTarget` (`FLVC PaiTag`) | Channel | Corner    | 
-| --------------------------------- | ------- | --- |
-| `16`                             | alpha        | whole pane    |
-
-*NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple and similar pattern: `0`, `1`, `2` = R, G, B for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = R, G, B for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
-
-###### Known PaiTag entries
+`AnimationTarget` values and subsequent animation behavior change depending on the defined `PaiTag`.
 
 | `PaiTag` | Used for                |
 | -------- | --------------------- |
 | `FLPA`   | basic transformations |
 | `FLVC`     | vertex colors         |
 | `FLEU`     | USD patches           |
-| `FLMC`     | ?                      |
+| `FLMC`     | *unknown*                      |
 
-#### V.4.b. Notable files
+#### V.5.b. AnimationTarget
+
+##### FLPA PaiTag
+
+Related to basic transformations listed below.
+Expected value type for `KeyFrames` is `float`.
+
+| `AnimationTarget` (`FLPA PaiTag`) | Transformation                     | Unit    | 
+| --------------------------------- | ---------------------------------- | --- |
+| `0`                               | x-axis translation                 | px    |
+| `1`                               | y-axis translation                 | px    |
+| `2`                               | *unknown*                                   | /    |
+| `3`                               | scale **down**                                   | px    |
+| `4`                               | z-axis rotation (clockwise)        | degrees    |
+| `5`                               | z-axis rotation (counterclockwise) | degrees    |
+| `6`                               | x-axis scale   | none    |
+| `7`                               | y-axis scale   | none    |
+| `8`                               | pane size along x-axis             | px    |
+| `9`                               | pane size along y-axis             | px    |
+
+- Translations are relative to the (x, y) coordinates defined in your `.json` layout, so a (0, 0) translation means that the pane keeps its base position
+- Scaling is also relative to what is defined in your `.json` layout. To keep your pane size at a 1:1 ratio, `KeyFrames` values should be set to `1`
+- Value `3` for `AnimationTarget` scales the pane down along the y-axis by a certain px amount (no cropping involved), **although** it needs further testing to be completely sure. It seems to work with absolute values within `KeyFrames`, meaning that negative values have the same effect as if they were positive
+- Value `2` for `AnimationTarget` also needs further testing. This time I couldn't figure out what it actually does. An obvious guess would be that it scales the pane down along the x-axis, but my trial and error sessions haven't given any luck
+
+##### FLVC PaiTag
+
+Related to vertex colors transformations listed below.
+`KeyFrames` values range from 0 (invisible color channel) to 255 (opaque color channel).
+
+| `AnimationTarget` (`FLVC PaiTag`) | Channel | Corner    | 
+| --------------------------------- | ------- | --- |
+| `16`                             | alpha        | whole pane    |
+
+*NB: I haven't tested this thoroughly for RGB channels (now you're probably seeing how annoying it is), but my guess is that `AnimationTarget` values follow a fairly simple and similar pattern: `0`, `1`, `2` = R, G, B for a specific pane corner, `3` = alpha for that same corner ; `4`, `5`, `6` = R, G, B for another corner, `7` = alpha for this second corner, ..., `16` = alpha channel for the whole pane.*
+
+#### V.5.c. Notable files
 
 ##### ResidentMenu.szs (home screen)
 
 | `.bflyt`           | UI element                 | Notable `.bflan` files                         |
 | ------------------ | -------------------------- | ---------------------------------------------- |
-| `RdtBase`          | whole home screen menu     | `RdtBase_Enter`                                |
+| `RdtBase`          | entire home screen menu     | `RdtBase_Enter` (animation upon unlocking the console to home screen)                               |
 | `RdtBtnIconGame`   | game button                | `RdtBtnIconGame_Active`, `RdtBtnGame_Inactive` |
+| `RdtBtnFullLauncher` | all software applet button | `RdtBtnFullLauncher_Active`, `RdtBtnFullLauncher_Inactive`                                               |
 | `RdtBtnPvr`        | album applet button        | `RdtBtnPvr_Active`, `RdtBtnPvr_Inactive`       |
 | `RdtBtnCtrl`       | controllers applet button  | `RdtBtnCtrl_Active`, `RdtBtnCtrl_Inactive`     |
 | `RdtBtnSet`        | settings applet button     | `RdtBtnSet_Active`, `RdtBtnSet_Inactive`       |
 | `RdtBtnPow`        | power button               | `RdtBtnPow_Active`, `RdtBtnPow_Inactive`       |
-| `RdtBtnFullLauncher` | all software applet button | `RdtBtnFullLauncher_Active`, `RdtBtnFullLauncher_Inactive`                                               |
+| `RdtBtnMyPage`        | user profile button               | `RdtBtnMyPage_Active`, `RdtBtnMyPage_Inactive`       |
+
 
 ##### Set.szs (settings applet)
 
@@ -400,5 +427,7 @@ Key frames values range from 0 (invisible) to 255 (opaque).
 
 ## <a href="#thanks"></a>VI. Special thanks
 
-- The whole Nintendo Switch modding and homebrew scenes
 - Big thanks to exelix and Migush for all the tips
+- Zhi for the animated background testing part
+- All the contributors to the Nintendo Switch homebrew & modding scenes
+
