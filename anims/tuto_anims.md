@@ -7,7 +7,7 @@
 </div>
 
 <br />
-This tutorial virtually sums up everything I know about animations. However, some parts of this tutorial aren't as complete and rigorous as I'd have wanted them to be, so feel free to reach out to me if you know about additional resource that can be put into this document.
+This tutorial virtually sums up everything I know about animations. However, some parts of this tutorial aren't as complete and rigorous as I'd have wanted them to be, so feel free to reach out to either me or Migush (links down below) if you know about additional resource that can be put into this document.
 	
 ## Table of contents
 
