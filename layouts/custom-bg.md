@@ -7,9 +7,11 @@
 </div>
 
 <br />
-I've been receiving *a lot* of requests about that while the process is actually really simple. Once and for all, this short tutorial will describe how to customize a theme with the background image of your choice, whatever base layout you picked.
+I've been receiving a lot of requests about that while the process is actually really simple. Once and for all, this short tutorial will describe how to customize a theme with the background image of your choice, whatever base layout you picked.
 
 ## Table of contents
+
+*NB: unsupported applets (e.g. album, controllers, etc.) are not covered here.*
 
 - **[I. Choosing a background image](#i-choosing-a-background-image)**
 - **[II. Picking a layout](#ii-picking-a-layout)**
@@ -30,7 +32,7 @@ Pick whatever image you want, **as long as it meets these two requirements**:
 - Properly sized: **1280x720**
 - Properly formatted: `.jpg` with baseline/standard encoding **OR** `.dds` with DXT1 encoding
 
-You will most likely need a photo editor for your image to fulfill these conditions, otherwise Switch Theme Injector won't compile your theme. The encoding part should be straightforward as you should be prompted by the software you are using to set that properly. To convert any image file to a DXT1 encoded `.dds`, I recommend using paint.NET.
+You will most likely need a photo editor for your image to fulfill these conditions, otherwise Switch Theme Injector won't compile your theme. The encoding part should be straightforward as you should be prompted by the software you are using to set that properly. To convert any image file to a DXT1 encoded `.dds`, I recommend using [paint.NET](https://www.getpaint.net/download.html#download).
 
 *NB: while `.jpg` doesn't handle transparency at all, DXT1 `.dds` does it very poorly. I don't recommend getting fancy with transparency if using `.dds`. It should be fine if your image only contains areas at FULL transparency, but any intermediate opacity value in your image will cause ugly glitches.*
 
