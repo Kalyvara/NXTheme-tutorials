@@ -13,7 +13,7 @@ I've been receiving *a lot* of requests about that while the process is actually
 
 - **[I. Choosing a background image](#i-choosing-a-background-image)**
 - **[II. Picking a layout](#ii-picking-a-layout)**
-- **[III. Building with Switch Theme Injector](#ii-building-with-switch-theme-injector)**
+- **[III. Building with Switch Theme Injector](#iii-building-with-switch-theme-injector)**
 
 ## Requirements
 
