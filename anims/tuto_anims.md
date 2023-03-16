@@ -2,7 +2,9 @@
 
 *Written by [Capybara](https://themezer.net/creators/382997176307154945), March 2023*
 
-*Update: This tutorial is now part of [LayoutDocs](https://layoutdocs.themezer.net/guide/animations/). Thanks to Migush for proofreading it.
+<em><strong>Update: This tutorial is now part of [LayoutDocs](https://layoutdocs.themezer.net/guide/animations/). Thanks to Migush for proofreading it.</strong></em>
+
+<br />
 
 <div align="center">
 <img src="https://avatars.githubusercontent.com/u/65415089?s=200&v=4" />
