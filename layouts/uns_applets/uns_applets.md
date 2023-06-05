@@ -40,7 +40,7 @@ Applets that aren't part of `qlaunch` (except for the player selection menu and 
 - export the desired applet title as an `.nsp` using Goldleaf
 - extract the `romFS` from this `.nsp` using hactool, which will subsequently extract `.szs` files we can work with
 - make the `.json` layout, then patch the `.szs` with it
-- use Atmosphere's LayeredFS to install the patched `.szs` (i.e. drag and drop onto your SD card). *We will not be using NXTheme Installer here.*
+- use Atmosphere's LayeredFS to install the patched `.szs` (i.e. drag and drop onto your SD card).
 
 Important note: Firmware updates may provide different `.szs` files along with them, meaning you will have to redo these steps **at each firmware update** to avoid possible incompatibility issues (likely crashes). NXTheme Installer automates this process for the applets it supports, as you maybe noticed. Fortunately, there shouldn't be any need to rewrite your `.json` layout, as `.bflyt` and `.bflan` files should stay as-is and carry over firmware updates.
 
