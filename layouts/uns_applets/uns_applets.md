@@ -49,7 +49,7 @@ For reference, an exhaustive list of titles is provided on the [switchbrew wiki]
 |      Title     | Title id           |         Applet         |
 |:--------------:|--------------------|:----------------------:|
 |  `photoViewer` | `010000000000100D` |          Album         |
-|  `overlayDisp` | `010000000000100C` | Quick settings overlay |
+|  `overlayDisp` | `010000000000100C` | Overlay (quick settings, notifications, etc.) |
 |  `controller`  | `0100000000001003` |    Controllers menu    |
 | `playerSelect` | `0100000000001007` |  Player selection menu |
 |    `myPage`    | `0100000000001013` |        User page       |
