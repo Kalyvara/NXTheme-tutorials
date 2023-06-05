@@ -100,7 +100,7 @@ This will output two `.nca` files into the `photoViewer` folder, using `01000000
 
 6) We'll do a second extraction using the largest `.nca`.
 
-`hactool -k prod.keys --romfsdir=overlayDisp/romfs overlayDisp/248a0ab56ce956e4797110e59fd6435a.nca`
+`hactool -k prod.keys --romfsdir=romfs photoViewer/af070417a5b3b841864512df9f701d34.nca`
 
 This will extract the `romFS` into the `romfs` folder. The `.szs` have been extracted as well and should be located at `romfs/lyt`.
 
