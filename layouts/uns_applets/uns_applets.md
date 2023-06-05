@@ -113,9 +113,11 @@ Side note: Refer to this [repository](https://github.com/SciresM/hactool) for mo
 
 We're basically done with the extra steps required to theme non-`qlaunch` unsupported applets as we finally got our hands on their `.szs` files. What's next now is just the usual `.szs` diffpatching with Layout Editor. I won't be implementing animations here so I'll just stick with Visual Studio Code to write my `.json`. Note that the `.json`'s header must be edited accordingly, like so in this case:
 
-`"PatchName": "Your theme name",
-  "AuthorName": "Capybara",
-  "TargetName": "PhotoViewer.szs"`
+```
+"PatchName": "Your theme name",
+"AuthorName": "Capybara",
+"TargetName": "PhotoViewer.szs"
+```
 
 What differs is the installation process, which is normally automated by NXTheme Installer for supported applets. Patched `.szs` must be copied to `atmosphere/contents/<title id>/romfs/lyt/<file>.szs`, i.e. `atmosphere/contents/010000000000100D/romfs/lyt/PhotoViewer.szs` here. It's normal that these directories don't exist, you have to create them and make sure to reproduce this folder tree. Atmosphere's LayeredFS should then load the custom theme instead of the default one.
 
