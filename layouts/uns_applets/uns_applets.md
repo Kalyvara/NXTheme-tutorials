@@ -80,7 +80,7 @@ Look for the applet's title id within the list (`010000000000100D` here), select
 | ------------------------------------- | --------------------------------------------- |
 
 3) We can proceed on extracting the `.szs` off the exported `.nsp`.
-First, download hactool and put hactool.exe into a new directory (which I named unsApplets here). [Dump your keys](https://nh-server.github.io/switch-guide/extras/dumping_title_keys/) if you haven't done it already, then drop them into your hactool directory along with the exported `.nsp`.
+First, download hactool and put `hactool.exe` into a new directory (which I named unsApplets here). [Dump your keys](https://nh-server.github.io/switch-guide/extras/dumping_title_keys/) if you haven't done it already, then drop them into your hactool directory along with the exported `.nsp`.
 
 ![hactool folder](hactoolfolder.JPG "hactool folder")
 
@@ -106,6 +106,8 @@ This will extract the `romFS` into the `romfs` folder. The `.szs` have been extr
 
 | ![Command line done](cmd_done.JPG "Command line done") | ![romfs/lyt](lyt.JPG "romfs/lyt") |
 | ------------------------------------- | --------------------------------------------- |
+
+Side note: Refer to this [repository](https://github.com/SciresM/hactool) for more info on using hactool.
 
 ### III.2. Diffpatching and installation
 
