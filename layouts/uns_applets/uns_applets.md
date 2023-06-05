@@ -29,7 +29,7 @@ In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g.
 
 Each installed app on the Switch is a title that has a unique id.
 
-`qlaunch` is the one that contains the home menu applets under it. Some of those are officially supported by the injector (e.g. `ResidentMenu`, `Flaunch`, `Set`, etc.), while some aren't (e.g. `Option`). The corresponding `.szs` files have already been extracted by the NXTheme Installer homebrew app and should be located at `themes/systemData` on your SD card, so diffing them is a straightforward process as you don't need to manually extract these files. I won't elaborate this here, rather I recommend checking out [SodaSoba's tutorial](https://layoutdocs.themezer.net/guide/diffpatch/) on the subject.
+`qlaunch` is the one that contains the home menu applets under it. Some of those are officially supported by the injector (e.g. `ResidentMenu.szs`, `Flaunch.szs`, `Set.szs`, etc.), while some aren't (e.g. `Option.szs`). The corresponding `.szs` files have already been extracted by the NXTheme Installer homebrew app and should be located at `themes/systemData` on your SD card, so diffing them is a straightforward process as you don't need to manually extract these files. I won't elaborate this here, rather I recommend checking out [SodaSoba's tutorial](https://layoutdocs.themezer.net/guide/diffpatch/) on the subject.
 
 `qlaunch`'s id is `0100000000001000`.
 
