@@ -111,7 +111,7 @@ Side note: Refer to this [repository](https://github.com/SciresM/hactool) for mo
 
 ### III.2. Diffpatching and installation
 
-We're basically done with the extra steps required to theme non-`qlaunch` unsupported applets as we finally got our hands on their `.szs` files. What's now is just the usual `.szs` diffpatching with Layout Editor. I won't be implementing animations here so I'll just stick using Visual Studio Code to write my `.json`. Note that the `.json`'s header must be edited accordingly, like so in this case:
+We're basically done with the extra steps required to theme non-`qlaunch` unsupported applets as we finally got our hands on their `.szs` files. What's next now is just the usual `.szs` diffpatching with Layout Editor. I won't be implementing animations here so I'll just stick using Visual Studio Code to write my `.json`. Note that the `.json`'s header must be edited accordingly, like so in this case:
 
 `"PatchName": "Your theme name",
   "AuthorName": "Capybara",
