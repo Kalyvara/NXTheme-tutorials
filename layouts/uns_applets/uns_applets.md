@@ -5,7 +5,7 @@ It's possible to theme basically all the menus that aren't officially supported 
 
 In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g. `PhotoViewer.szs` (Album applet). In other words, making themes for those menus.
 
-**szs themes contain copyrighted stuff and are intended for personal use. For sharing purposes, use nxthemes.**
+**szs themes contain copyrighted assets and are intended for personal use. For sharing purposes, use nxthemes.**
 
 ## Table of contents
 
