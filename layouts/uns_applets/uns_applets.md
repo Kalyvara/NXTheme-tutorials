@@ -42,7 +42,7 @@ Applets that aren't part of `qlaunch` (except for the player selection menu and 
 - make the `.json` layout, then patch the `.szs` with it
 - use Atmosphere's LayeredFS to install the patched `.szs` (i.e. drag and drop onto your SD card)
 
-Important note: Firmware updates may provide different `.szs` files along with them, meaning you will have to redo these steps **at each firmware update** to avoid possible incompatibility issues (likely crashes). NXTheme Installer automates this process for the applets it supports, as you maybe noticed. Fortunately, there shouldn't be any need to rewrite your `.json` layout, as `.bflyt` and `.bflan` files should stay as-is and carry over firmware updates.
+Important note: Firmware updates may provide different `.szs` files along with them, meaning you will have to redo these steps **at each firmware update** to avoid possible incompatibility issues (likely crashes). NXTheme Installer automates this process for the applets it supports, as you maybe noticed. Fortunately, there shouldn't be any need to rewrite your `.json` layout, as `.bflyt` and `.bflan` files should carry over firmware updates, so you can keep your `.json` as-is.
 
 For reference, an exhaustive list of titles is provided on the [switchbrew wiki](https://switchbrew.org/wiki/Title_list). Here are some id's that might be of interest:
 
