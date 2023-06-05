@@ -98,7 +98,7 @@ This will output two `.nca` files into the `photoViewer` folder, using `01000000
 
 ![nca](nca.JPG "nca")
 
-6) We'll do a second extraction using this `.nca`:
+6) We'll do a second extraction using the largest `.nca`.
 
 `hactool -k prod.keys --romfsdir=overlayDisp/romfs overlayDisp/248a0ab56ce956e4797110e59fd6435a.nca`
 
