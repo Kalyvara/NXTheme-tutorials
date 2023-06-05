@@ -3,7 +3,7 @@
 
 It's possible to theme basically all the menus that aren't officially supported by Switch Theme Injector using the usual `.json` layout patching method and some extra steps. Custom background images for unsupported menus *may be* achievable as well using the extra templates feature of the injector, although you'll have to do your own testing to make it work properly as the original script relies on texture replacement within the `.btnx` and thus may lead to mild UI glitches if you picked the wrong textures. For more details on how to implement custom backgrounds to unsupported applets, please refer to [exelix's documentation](https://github.com/exelix11/SwitchThemeInjector/blob/master/SzsPatching.md).
 
-In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g. `PhotoViewer.szs` (Album applet). In other words, making themes for those menus.
+In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g. `PhotoViewer.szs` (Album applet).
 
 **szs files contain copyrighted assets and are strictly intended for personal use. For sharing purposes, use nxthemes.**
 
