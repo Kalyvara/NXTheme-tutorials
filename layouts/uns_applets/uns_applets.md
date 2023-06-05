@@ -1,9 +1,7 @@
 # Themes for unsupported applets: going further
 *Written by [Capybara](https://themezer.net/creators/382997176307154945), June 2023*
 
-It's possible to theme basically all the menus that aren't officially supported by Switch Theme Injector using the usual `.json` layout patching method and some extra steps. Custom background images for unsupported menus *may be* achievable as well using the extra templates feature of the injector, although you'll have to do your own testing to make it work properly as the original script relies on texture replacement within the `.btnx` and thus may lead to mild UI glitches if you picked the wrong textures. For more details on how to implement custom backgrounds to unsupported applets, please refer to [exelix's documentation](https://github.com/exelix11/SwitchThemeInjector/blob/master/SzsPatching.md).
-
-In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g. `PhotoViewer.szs` (Album applet).
+It's possible to theme basically all the menus that aren't officially supported by Switch Theme Injector using the usual `.json` layout patching method and some extra steps. In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g. `PhotoViewer.szs` (Album applet).
 
 **szs files contain copyrighted assets and are strictly intended for personal use. For sharing purposes, use nxthemes.**
 
@@ -14,6 +12,7 @@ In this tutorial, I'll only be focusing on how to patch unsupported `.szs`, e.g.
 - **[III. Tutorial](#iii-tutorial)**
 	- [III.1. Extracting the .szs](#iii1-extracting-the-szs)
 	- [III.2. Diffpatching and installation](#iii2-diffpatching-and-installation)
+	- [III.3. Implementing custom background images](#iii3-implementing-custom-background-images)
 - **[IV. Additional notes](#iv-additional-notes)**
 - **[V. Special thanks](#v-special-thanks)**
 
@@ -128,6 +127,10 @@ What differs is the installation process, which is normally automated by NXTheme
 
 
 *No more bottom line in player selection, finally!*
+
+### III.3. Implementing custom background images
+
+Custom background images for unsupported menus *may be* achievable as well using the extra templates feature of the injector, although you'll have to do your own testing to make it work properly as the original script relies on texture replacement within the `.btnx` and thus may lead to mild UI glitches if you picked the wrong textures. For more details on how to implement custom backgrounds to unsupported applets, please refer to [exelix's documentation](https://github.com/exelix11/SwitchThemeInjector/blob/master/SzsPatching.md).
 
 ## IV. Additional notes
 
