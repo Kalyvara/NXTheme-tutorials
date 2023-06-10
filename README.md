@@ -1,5 +1,11 @@
 # NXTheme tutorials
 
+---
+
+**Important: This repository likely won't be updated anymore, tutorials are now directly forked from LayoutDocs repository. Check out the updated versions of the guides on the [website](layoutdocs.themezer.net/).**
+
+---
+
 If you want to learn more about Nintendo Switch themeing, this repository might be for you. I still recommend to read through [LayoutDocs](layoutdocs.themezer.net/) where basics you will be needing are covered.
 
 ## Available tutorials
