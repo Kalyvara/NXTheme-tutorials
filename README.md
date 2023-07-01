@@ -6,7 +6,7 @@
 
 ---
 
-If you want to learn more about Nintendo Switch themeing, this repository might be for you. I still recommend to read through [LayoutDocs](layoutdocs.themezer.net/) where basics you will be needing are covered.
+If you want to learn more about Nintendo Switch themeing, this repository might be for you. I still recommend to read through [LayoutDocs](https://layoutdocs.themezer.net/) where basics you will be needing are covered.
 
 ## Available tutorials
 
